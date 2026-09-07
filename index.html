@@ -224,40 +224,25 @@
     }
 
     .print {
-      width: min(148px, 46vw);
+      width: min(176px, 48vw);
       margin-top: 1rem;
       transform: rotate(-2deg);
     }
 
     .print-plate {
       position: relative;
-      background: var(--paper);
-      border: 3px solid var(--ink);
-      overflow: hidden;
+      background: transparent;
     }
 
     .print-plate img {
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: 50% 22%;
-      filter: grayscale(1) contrast(1.45) brightness(0.92);
-      mix-blend-mode: multiply;
-    }
-
-    .print-plate::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--grain-paper);
-      mix-blend-mode: multiply;
-      pointer-events: none;
+      filter: contrast(1.12) saturate(1.06) url(#drink-grain);
     }
 
     .print figcaption {
-      margin-top: 0.5rem;
+      margin-top: 0.55rem;
       color: var(--ink);
     }
 
@@ -505,6 +490,17 @@
   </style>
 </head>
 <body>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <filter id="drink-grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="ink">
+        <feFuncA type="table" tableValues="0 0.28"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="ink" mode="multiply" result="burned"/>
+      <feComposite in="burned" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </svg>
   <div class="opening grain-paper">
     <header class="topbar">
       <p class="label topbar-mark">Pop-up coffee</p>
@@ -564,7 +560,7 @@
       <p>Hot. Cold. No theater.</p>
       <figure class="print">
         <div class="print-plate">
-          <img src="midnight-campfire.jpg" alt="Midnight Campfire Latte" width="776" height="800">
+          <img src="midnight-campfire.png" alt="Midnight Campfire Latte" width="571" height="710">
         </div>
         <figcaption class="label">Midnight Campfire</figcaption>
       </figure>
