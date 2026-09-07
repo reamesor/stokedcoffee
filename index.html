@@ -6,6 +6,21 @@
   <meta name="theme-color" content="#111111">
   <meta name="description" content="STOKED COFFEE. Steam rising. Sun out. Stoked in.">
   <title>STOKED COFFEE — Coming Soon</title>
+  <link rel="canonical" href="https://stokedcoffee.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="STOKED COFFEE">
+  <meta property="og:title" content="STOKED COFFEE — Coming Soon">
+  <meta property="og:description" content="STOKED COFFEE. Steam rising. Sun out. Stoked in.">
+  <meta property="og:url" content="https://stokedcoffee.vercel.app/">
+  <meta property="og:image" content="https://stokedcoffee.vercel.app/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="STOKED COFFEE — Coming Soon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="STOKED COFFEE — Coming Soon">
+  <meta name="twitter:description" content="STOKED COFFEE. Steam rising. Sun out. Stoked in.">
+  <meta name="twitter:image" content="https://stokedcoffee.vercel.app/og.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Bagel+Fat+One&display=swap" rel="stylesheet">
@@ -195,25 +210,26 @@
     .vision {
       border-top: 12px solid var(--ink);
       border-bottom: 12px solid var(--ink);
-      padding: 1.6rem 1.25rem 1.75rem;
+      padding: 1.85rem 1.25rem 2rem;
     }
 
     .vision-lockup {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.15em;
+      gap: 0.4rem;
+      text-align: center;
     }
 
-    .vision-throw {
-      justify-content: center;
-      font-size: clamp(28px, 6.4vw, 76px);
+    .vision-line {
+      font-family: Archivo, sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.05rem, 2.6vw, 1.55rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1.15;
       color: var(--ink);
-      -webkit-text-stroke: 0.12em var(--vermilion);
-      filter: drop-shadow(0.07em 0.08em 0 var(--ink));
     }
-
-    .vision-throw-end { font-size: clamp(34px, 7.4vw, 88px); }
 
     .ritual {
       padding: clamp(2.75rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) 0;
@@ -290,12 +306,6 @@
     }
 
     .throwup-wide { font-size: clamp(26px, 6.1vw, 96px); }
-
-    .vision .throwup.vision-throw {
-      color: var(--ink);
-      -webkit-text-stroke: 0.12em var(--vermilion);
-      filter: drop-shadow(0.07em 0.08em 0 var(--ink));
-    }
 
     .popup-note {
       margin-top: 2.25rem;
@@ -538,40 +548,9 @@
 
   <section class="vision grain-vermilion">
     <div class="vision-lockup" aria-label="Steam rising. Sun out. Stoked in.">
-      <p class="throwup vision-throw" aria-hidden="true">
-        <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">S</span>
-        <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">T</span>
-        <span class="letter" style="transform:rotate(-4deg) translateY(0.03em)">E</span>
-        <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">A</span>
-        <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">M</span>
-        <span class="throwup-gap" aria-hidden="true"></span>
-        <span class="letter" style="transform:rotate(4deg) translateY(-0.03em)">R</span>
-        <span class="letter" style="transform:rotate(-5deg) translateY(0.05em)">I</span>
-        <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">S</span>
-        <span class="letter" style="transform:rotate(-6deg) translateY(0.03em)">I</span>
-        <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">N</span>
-        <span class="letter" style="transform:rotate(-2deg) translateY(0.04em)">G</span>
-      </p>
-      <p class="throwup vision-throw" aria-hidden="true">
-        <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">S</span>
-        <span class="letter" style="transform:rotate(-4deg) translateY(0.04em)">U</span>
-        <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">N</span>
-        <span class="throwup-gap" aria-hidden="true"></span>
-        <span class="letter" style="transform:rotate(-6deg) translateY(0.03em)">O</span>
-        <span class="letter" style="transform:rotate(4deg) translateY(-0.05em)">U</span>
-        <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">T</span>
-      </p>
-      <p class="throwup vision-throw vision-throw-end" aria-hidden="true">
-        <span class="letter" style="transform:rotate(-5deg) translateY(0.04em)">S</span>
-        <span class="letter" style="transform:rotate(4deg) translateY(-0.04em)">T</span>
-        <span class="letter" style="transform:rotate(-3deg) translateY(0.03em)">O</span>
-        <span class="letter" style="transform:rotate(6deg) translateY(-0.05em)">K</span>
-        <span class="letter" style="transform:rotate(-4deg) translateY(0.04em)">E</span>
-        <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">D</span>
-        <span class="throwup-gap" aria-hidden="true"></span>
-        <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">I</span>
-        <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">N</span>
-      </p>
+      <p class="vision-line">Steam rising</p>
+      <p class="vision-line">Sun out</p>
+      <p class="vision-line">Stoked in</p>
     </div>
   </section>
 
