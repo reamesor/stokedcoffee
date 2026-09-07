@@ -33,7 +33,7 @@
       --vermilion: #F03A14;
       --grain-heavy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncG type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncB type='discrete' tableValues='0 0 1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.4'/%3E%3C/svg%3E");
       --grain-paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncG type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncB type='discrete' tableValues='0 0 1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.16'/%3E%3C/svg%3E");
-      --stoked: clamp(58px, 13vw, 172px);
+      --stoked: clamp(64px, 16.5vw, 204px);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -112,10 +112,10 @@
       color: var(--ink);
       font-family: "Bagel Fat One", cursive;
       font-weight: 400;
-      -webkit-text-stroke: 0.12em var(--paper);
+      -webkit-text-stroke: 0.145em var(--paper);
       paint-order: stroke fill;
       filter: drop-shadow(0.07em 0.08em 0 var(--ink));
-      line-height: 0.86;
+      line-height: 0.8;
       user-select: none;
     }
 
@@ -128,12 +128,24 @@
     .wordmark-stoked { font-size: var(--stoked); }
     .wordmark-coffee {
       font-size: calc(0.78 * var(--stoked));
-      margin-top: -0.04em;
+      margin-top: -0.08em;
     }
 
     .letter {
       display: inline-block;
       margin-right: -0.07em;
+    }
+
+    .wordmark .letter {
+      margin-right: -0.12em;
+      transform: rotate(var(--r, 0deg)) translateY(var(--y, 0em));
+      cursor: pointer;
+    }
+
+    .wordmark .letter:hover,
+    .wordmark .letter:focus-visible {
+      color: var(--vermilion);
+      transform: rotate(calc(var(--r, 0deg) + var(--kick, 9deg))) translateY(calc(var(--y, 0em) - 0.11em)) scale(1.1);
     }
 
     .wordmark-line .letter:last-child,
@@ -205,6 +217,10 @@
 
     @media (prefers-reduced-motion: reduce) {
       .lid-eyes { animation: none; }
+      .wordmark .letter:hover,
+      .wordmark .letter:focus-visible {
+        transform: rotate(var(--r, 0deg)) translateY(var(--y, 0em));
+      }
     }
 
     .vision {
@@ -505,20 +521,20 @@
       <div class="hero-stage">
         <h1 class="wordmark" aria-label="Stoked Coffee">
           <span class="wordmark-line wordmark-stoked" aria-hidden="true">
-            <span class="letter" style="transform:rotate(-7deg) translateY(0.06em)">S</span>
-            <span class="letter" style="transform:rotate(3deg) translateY(-0.05em)">T</span>
-            <span class="letter" style="transform:rotate(-2deg) translateY(0.04em)">O</span>
-            <span class="letter" style="transform:rotate(6deg) translateY(-0.04em)">K</span>
-            <span class="letter" style="transform:rotate(-4deg) translateY(0.05em)">E</span>
-            <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">D</span>
+            <span class="letter" style="--r:-7deg;--y:0.06em;--kick:11deg">S</span>
+            <span class="letter" style="--r:3deg;--y:-0.05em;--kick:-10deg">T</span>
+            <span class="letter" style="--r:-2deg;--y:0.04em;--kick:8deg">O</span>
+            <span class="letter" style="--r:6deg;--y:-0.04em;--kick:-12deg">K</span>
+            <span class="letter" style="--r:-4deg;--y:0.05em;--kick:10deg">E</span>
+            <span class="letter" style="--r:3deg;--y:-0.03em;--kick:-9deg">D</span>
           </span>
           <span class="wordmark-line wordmark-coffee" aria-hidden="true">
-            <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">C</span>
-            <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">O</span>
-            <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">F</span>
-            <span class="letter" style="transform:rotate(-6deg) translateY(0.03em)">F</span>
-            <span class="letter" style="transform:rotate(4deg) translateY(-0.04em)">E</span>
-            <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">E</span>
+            <span class="letter" style="--r:5deg;--y:-0.04em;--kick:-11deg">C</span>
+            <span class="letter" style="--r:-3deg;--y:0.04em;--kick:9deg">O</span>
+            <span class="letter" style="--r:3deg;--y:-0.04em;--kick:-8deg">F</span>
+            <span class="letter" style="--r:-6deg;--y:0.03em;--kick:12deg">F</span>
+            <span class="letter" style="--r:4deg;--y:-0.04em;--kick:-10deg">E</span>
+            <span class="letter" style="--r:-3deg;--y:0.04em;--kick:8deg">E</span>
           </span>
         </h1>
         <div class="lid" aria-hidden="true">
