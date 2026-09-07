@@ -217,10 +217,48 @@
 
     .expect-item .label { margin-bottom: 0.5rem; }
 
-    .expect-item p:last-child {
+    .expect-item > p:not(.label) {
       font-size: clamp(1.2rem, 2.4vw, 1.55rem);
       font-weight: 600;
       line-height: 1.2;
+    }
+
+    .print {
+      width: min(148px, 46vw);
+      margin-top: 1rem;
+      transform: rotate(-2deg);
+    }
+
+    .print-plate {
+      position: relative;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      overflow: hidden;
+    }
+
+    .print-plate img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 50% 22%;
+      filter: grayscale(1) contrast(1.45) brightness(0.92);
+      mix-blend-mode: multiply;
+    }
+
+    .print-plate::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--grain-paper);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .print figcaption {
+      margin-top: 0.5rem;
+      color: var(--ink);
     }
 
     /* ——— Next pop-up poster ——— */
@@ -422,6 +460,19 @@
 
       .expect-item .label { margin-bottom: 0; }
 
+      .expect-coffee {
+        grid-template-columns: 11rem auto auto;
+        justify-content: start;
+        align-items: center;
+        column-gap: 2.25rem;
+      }
+
+      .expect-coffee .print {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        margin-top: 0;
+      }
+
       .poster-stack {
         display: grid;
         gap: 0.5rem;
@@ -508,9 +559,15 @@
   </section>
 
   <section class="expect grain-paper">
-    <article class="expect-item">
+    <article class="expect-item expect-coffee">
       <p class="label">The coffee</p>
       <p>Hot. Cold. No theater.</p>
+      <figure class="print">
+        <div class="print-plate">
+          <img src="midnight-campfire.jpg" alt="Midnight Campfire Latte" width="776" height="800">
+        </div>
+        <figcaption class="label">Midnight Campfire</figcaption>
+      </figure>
     </article>
     <article class="expect-item">
       <p class="label">The pop-ups</p>
