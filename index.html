@@ -195,28 +195,25 @@
     .vision {
       border-top: 12px solid var(--ink);
       border-bottom: 12px solid var(--ink);
-      padding: 1.85rem 1.5rem 2rem;
+      padding: 1.6rem 1.25rem 1.75rem;
     }
 
-    .vision-lead {
-      font-weight: 800;
-      font-size: clamp(1.35rem, 3.4vw, 2.25rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      text-align: center;
-      color: var(--ink);
-      max-width: 16em;
-      margin: 0 auto;
+    .vision-lockup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15em;
     }
 
-    .vision-sub {
-      margin-top: 0.85rem;
-      font-weight: 600;
-      font-size: clamp(16px, 2vw, 20px);
-      line-height: 1.2;
-      text-align: center;
+    .vision-throw {
+      justify-content: center;
+      font-size: clamp(28px, 6.4vw, 76px);
       color: var(--ink);
+      -webkit-text-stroke: 0.12em var(--vermilion);
+      filter: drop-shadow(0.07em 0.08em 0 var(--ink));
     }
+
+    .vision-throw-end { font-size: clamp(34px, 7.4vw, 88px); }
 
     .ritual {
       padding: clamp(2.75rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) 0;
@@ -282,12 +279,23 @@
 
     .throwup .letter { margin-right: -0.07em; }
 
+    .throwup-gap {
+      width: 0.28em;
+      margin-right: 0;
+    }
+
     .throwup-dash {
       margin: 0 0.12em 0 0.08em;
       transform: none;
     }
 
     .throwup-wide { font-size: clamp(26px, 6.1vw, 96px); }
+
+    .vision .throwup.vision-throw {
+      color: var(--ink);
+      -webkit-text-stroke: 0.12em var(--vermilion);
+      filter: drop-shadow(0.07em 0.08em 0 var(--ink));
+    }
 
     .popup-note {
       margin-top: 2.25rem;
@@ -529,8 +537,42 @@
   </div>
 
   <section class="vision grain-vermilion">
-    <p class="vision-lead">Steam rising. Sun out. Stoked in.</p>
-    <p class="vision-sub">A pop-up coffee shop chasing good light.</p>
+    <div class="vision-lockup" aria-label="Steam rising. Sun out. Stoked in.">
+      <p class="throwup vision-throw" aria-hidden="true">
+        <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">S</span>
+        <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">T</span>
+        <span class="letter" style="transform:rotate(-4deg) translateY(0.03em)">E</span>
+        <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">A</span>
+        <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">M</span>
+        <span class="throwup-gap" aria-hidden="true"></span>
+        <span class="letter" style="transform:rotate(4deg) translateY(-0.03em)">R</span>
+        <span class="letter" style="transform:rotate(-5deg) translateY(0.05em)">I</span>
+        <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">S</span>
+        <span class="letter" style="transform:rotate(-6deg) translateY(0.03em)">I</span>
+        <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">N</span>
+        <span class="letter" style="transform:rotate(-2deg) translateY(0.04em)">G</span>
+      </p>
+      <p class="throwup vision-throw" aria-hidden="true">
+        <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">S</span>
+        <span class="letter" style="transform:rotate(-4deg) translateY(0.04em)">U</span>
+        <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">N</span>
+        <span class="throwup-gap" aria-hidden="true"></span>
+        <span class="letter" style="transform:rotate(-6deg) translateY(0.03em)">O</span>
+        <span class="letter" style="transform:rotate(4deg) translateY(-0.05em)">U</span>
+        <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">T</span>
+      </p>
+      <p class="throwup vision-throw vision-throw-end" aria-hidden="true">
+        <span class="letter" style="transform:rotate(-5deg) translateY(0.04em)">S</span>
+        <span class="letter" style="transform:rotate(4deg) translateY(-0.04em)">T</span>
+        <span class="letter" style="transform:rotate(-3deg) translateY(0.03em)">O</span>
+        <span class="letter" style="transform:rotate(6deg) translateY(-0.05em)">K</span>
+        <span class="letter" style="transform:rotate(-4deg) translateY(0.04em)">E</span>
+        <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">D</span>
+        <span class="throwup-gap" aria-hidden="true"></span>
+        <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">I</span>
+        <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">N</span>
+      </p>
+    </div>
   </section>
 
   <section class="ritual grain-paper">
@@ -540,7 +582,7 @@
         <span class="letter" style="transform:rotate(4deg) translateY(-0.03em)">1</span>
       </p>
       <p class="label">Bloom</p>
-      <p>Two days out, the date blooms. That’s all, for now.</p>
+      <p>Date first. Two days out.</p>
     </article>
     <article class="step">
       <p class="step-num" aria-hidden="true">
@@ -548,7 +590,7 @@
         <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">2</span>
       </p>
       <p class="label">Steep</p>
-      <p>Morning of, the spot steeps into view. Come find it.</p>
+      <p>Spot next. Morning of.</p>
     </article>
     <article class="step">
       <p class="step-num" aria-hidden="true">
@@ -556,7 +598,7 @@
         <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">3</span>
       </p>
       <p class="label">Pour</p>
-      <p>We pour till the beans run dry, then we’re already on to the next one.</p>
+      <p>Pour till dry. Already gone.</p>
     </article>
   </section>
 
