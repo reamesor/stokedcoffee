@@ -283,20 +283,12 @@
 
 
     .popup {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
       margin-top: clamp(2.75rem, 7vw, 5.5rem);
       color: var(--paper);
       padding: clamp(3.25rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
-      background:
-        var(--grain-heavy),
-        linear-gradient(90deg, rgba(17, 17, 17, 0.62) 0%, rgba(17, 17, 17, 0.22) 48%, rgba(17, 17, 17, 0.1) 100%),
-        url("espresso.jpg") 72% 46% / cover no-repeat;
-      background-blend-mode: multiply, normal, normal;
     }
 
-    .popup-inner { position: relative; z-index: 1; max-width: 72rem; margin: 0 auto; }
+    .popup-inner { max-width: 72rem; margin: 0 auto; }
 
     .popup-kicker { margin-bottom: 1.75rem; }
 
@@ -605,7 +597,7 @@
     </article>
   </section>
 
-  <section class="popup">
+  <section class="popup grain-ink">
     <div class="popup-inner">
       <p class="label chip popup-kicker">Next pop-up</p>
       <div class="poster-stack">
