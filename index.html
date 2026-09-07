@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="STOKED COFFEE. A pop-up coffee shop. Setting up soon.">
+  <meta name="description" content="STOKED COFFEE. A pop-up coffee shop you have to catch.">
   <title>STOKED COFFEE — Coming Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
       --vermilion: #F03A14;
       --grain-heavy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncG type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncB type='discrete' tableValues='0 0 1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.4'/%3E%3C/svg%3E");
       --grain-paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncG type='discrete' tableValues='0 0 1 1'/%3E%3CfeFuncB type='discrete' tableValues='0 0 1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.16'/%3E%3C/svg%3E");
+      --stoked: clamp(58px, 13vw, 172px);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,7 +69,6 @@
       line-height: 1.2;
     }
 
-    /* ——— Top bar ——— */
     .topbar {
       display: flex;
       align-items: center;
@@ -77,8 +77,6 @@
       padding: 0.7rem 1.25rem;
       border-bottom: 6px solid var(--ink);
     }
-
-    .topbar-mark { color: var(--ink); }
 
     .chip {
       display: inline-flex;
@@ -92,7 +90,6 @@
       flex-shrink: 0;
     }
 
-    /* ——— Wordmark ——— */
     .wordmark {
       display: flex;
       flex-direction: column;
@@ -113,9 +110,9 @@
       white-space: nowrap;
     }
 
-    .wordmark-stoked { font-size: clamp(58px, 13vw, 172px); }
+    .wordmark-stoked { font-size: var(--stoked); }
     .wordmark-coffee {
-      font-size: calc(0.78 * clamp(58px, 13vw, 172px));
+      font-size: calc(0.78 * var(--stoked));
       margin-top: -0.04em;
     }
 
@@ -124,14 +121,16 @@
       margin-right: -0.07em;
     }
 
-    .wordmark-line .letter:last-child { margin-right: 0; }
+    .wordmark-line .letter:last-child,
+    .throwup .letter:last-child { margin-right: 0; }
 
-    /* ——— Hero ——— */
     .opening {
+      position: relative;
       min-height: 100vh;
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     .hero {
@@ -141,6 +140,23 @@
       align-items: center;
       justify-content: center;
       padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    .sneak {
+      position: absolute;
+      right: clamp(1.25rem, 6vw, 5.5rem);
+      bottom: 0;
+      width: clamp(168px, 20vw, 236px);
+      transform: translateY(52%) rotate(6deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .sneak img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: contrast(1.12) saturate(1.06) url(#drink-grain);
     }
 
     .hero-stage {
@@ -155,7 +171,7 @@
       left: -0.15em;
       bottom: -0.15em;
       width: clamp(64px, 11vw, 108px);
-      font-size: clamp(58px, 13vw, 172px);
+      font-size: var(--stoked);
       pointer-events: none;
     }
 
@@ -177,76 +193,72 @@
     }
 
     .hero-line {
-      margin-top: 2.25rem;
-      font-size: clamp(16px, 2.1vw, 20px);
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      margin-top: 2.1rem;
+      font-size: max(12px, calc(0.14 * var(--stoked)));
       text-align: center;
-      max-width: 24em;
     }
 
-    /* ——— Manifesto ——— */
-    .manifesto {
+    .vision {
       border-top: 12px solid var(--ink);
       border-bottom: 12px solid var(--ink);
-      padding: 1.85rem 1.5rem;
+      padding: 1.85rem 1.5rem 2rem;
     }
 
-    .manifesto p {
+    .vision-lead {
       font-weight: 800;
-      font-size: clamp(1.4rem, 3.6vw, 2.35rem);
+      font-size: clamp(1.35rem, 3.4vw, 2.25rem);
       line-height: 1.05;
       letter-spacing: -0.02em;
       text-align: center;
       color: var(--ink);
-      max-width: 22em;
+      max-width: 18em;
       margin: 0 auto;
     }
 
-    /* ——— Expect ——— */
-    .expect {
-      padding: clamp(2.75rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) 0;
-    }
-
-    .expect-item {
-      padding: 1.35rem 0;
-      border-top: 6px solid var(--ink);
-    }
-
-    .expect-item:last-child { border-bottom: 6px solid var(--ink); }
-
-    .expect-item .label { margin-bottom: 0.5rem; }
-
-    .expect-item > p:not(.label) {
-      font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    .vision-sub {
+      margin-top: 0.85rem;
       font-weight: 600;
+      font-size: clamp(16px, 2vw, 20px);
       line-height: 1.2;
-    }
-
-    .print {
-      width: min(176px, 48vw);
-      margin-top: 1rem;
-      transform: rotate(-2deg);
-    }
-
-    .print-plate {
-      position: relative;
-      background: transparent;
-    }
-
-    .print-plate img {
-      display: block;
-      width: 100%;
-      height: auto;
-      filter: contrast(1.12) saturate(1.06) url(#drink-grain);
-    }
-
-    .print figcaption {
-      margin-top: 0.55rem;
+      text-align: center;
       color: var(--ink);
     }
 
-    /* ——— Next pop-up poster ——— */
+    .ritual {
+      padding: clamp(2.75rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) 0;
+    }
+
+    .step {
+      padding: 1.4rem 0;
+      border-top: 6px solid var(--ink);
+    }
+
+    .step:last-of-type { border-bottom: 6px solid var(--ink); }
+
+    .step-num {
+      display: flex;
+      flex-wrap: nowrap;
+      font-family: "Bagel Fat One", cursive;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 0.86;
+      color: var(--ink);
+      -webkit-text-stroke: 0.12em var(--paper);
+      paint-order: stroke fill;
+      filter: drop-shadow(0.07em 0.08em 0 var(--ink));
+      user-select: none;
+      margin-bottom: 0.65rem;
+    }
+
+    .step .label { margin-bottom: 0.45rem; }
+
+    .step p:last-of-type {
+      font-size: clamp(1.15rem, 2.3vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.2;
+      max-width: 22em;
+    }
+
+
     .popup {
       margin-top: clamp(2.75rem, 7vw, 5.5rem);
       color: var(--paper);
@@ -255,16 +267,9 @@
 
     .popup-inner { max-width: 72rem; margin: 0 auto; }
 
-    .popup-kicker { margin-bottom: 2rem; }
+    .popup-kicker { margin-bottom: 1.75rem; }
 
-    .poster-line {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin-top: 1.75rem;
-    }
-
-    .poster-line .label { color: var(--paper); }
+    .poster-line { margin-top: 1.5rem; }
 
     .throwup {
       display: flex;
@@ -272,7 +277,7 @@
       align-items: baseline;
       white-space: nowrap;
       font-family: "Bagel Fat One", cursive;
-      font-size: clamp(52px, 12vw, 148px);
+      font-size: clamp(40px, 9vw, 118px);
       line-height: 0.86;
       color: var(--paper);
       -webkit-text-stroke: 0.12em var(--ink);
@@ -282,14 +287,13 @@
     }
 
     .throwup .letter { margin-right: -0.07em; }
-    .throwup .letter:last-child { margin-right: 0; }
 
-    .throwup-gap {
-      width: 0.22em;
-      margin-right: 0;
+    .throwup-dash {
+      margin: 0 0.12em 0 0.08em;
+      transform: none;
     }
 
-    .throwup-wide { font-size: clamp(28px, 6.4vw, 108px); }
+    .throwup-wide { font-size: clamp(26px, 6.1vw, 96px); }
 
     .popup-note {
       margin-top: 2.25rem;
@@ -298,14 +302,6 @@
       max-width: 28em;
     }
 
-    .popup-note a {
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .popup-note a:hover { color: var(--vermilion); }
-
-    /* ——— Email ——— */
     .signup {
       padding: clamp(3.25rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
     }
@@ -323,7 +319,12 @@
     .signup .micro {
       font-size: 16px;
       font-weight: 500;
-      margin-bottom: 1.5rem;
+    }
+
+    .signup .fine {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0.35rem 0 1.5rem;
     }
 
     .signup-form { display: flex; flex-direction: column; gap: 0.65rem; }
@@ -367,20 +368,13 @@
       border-radius: 0;
     }
 
-    .signup button:hover,
-    .ig:hover,
-    .popup-note a:hover {
-      color: var(--ink);
-    }
-
     .signup button:hover {
       background: var(--vermilion);
       border-color: var(--vermilion);
       color: var(--ink);
     }
 
-    .ig:hover,
-    .popup-note a:hover { color: var(--vermilion); }
+    .ig:hover { color: var(--vermilion); }
 
     .confirm {
       display: none;
@@ -399,7 +393,6 @@
       line-height: 1.05;
     }
 
-    /* ——— Footer ——— */
     .site-footer {
       color: var(--paper);
       padding: 1.75rem clamp(1.25rem, 5vw, 4rem);
@@ -430,38 +423,22 @@
 
     @media (min-width: 720px) {
       .topbar { padding: 0.75rem 2rem; }
-
       .hero { padding: 3rem 2rem 4rem; }
-
       .lid { left: -1.15em; bottom: -0.05em; }
 
-      .expect-item {
+      .step {
         display: grid;
-        grid-template-columns: 11rem 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 6.5rem 11rem 1fr;
+        gap: 1.25rem 1.75rem;
         align-items: baseline;
-        padding: 1.5rem 0;
+        padding: 1.6rem 0;
       }
 
-      .expect-item .label { margin-bottom: 0; }
+      .step-num { margin-bottom: 0; }
 
-      .expect-coffee {
-        grid-template-columns: 11rem auto auto;
-        justify-content: start;
-        align-items: center;
-        column-gap: 2.25rem;
-      }
+      .step .label { margin-bottom: 0; grid-column: 2; }
 
-      .expect-coffee .print {
-        grid-column: 3;
-        grid-row: 1 / span 2;
-        margin-top: 0;
-      }
-
-      .poster-stack {
-        display: grid;
-        gap: 0.5rem;
-      }
+      .step p:last-of-type { grid-column: 3; }
 
       .field {
         flex-direction: row;
@@ -486,6 +463,12 @@
       }
 
       .hero-line { margin-top: 1.35rem; }
+
+      .sneak {
+        width: clamp(120px, 38vw, 168px);
+        right: 0.15rem;
+        transform: translateY(50%) rotate(8deg);
+      }
     }
   </style>
 </head>
@@ -501,9 +484,10 @@
       <feComposite in="burned" in2="SourceGraphic" operator="in"/>
     </filter>
   </svg>
+
   <div class="opening grain-paper">
     <header class="topbar">
-      <p class="label topbar-mark">Pop-up coffee</p>
+      <p class="label">Pop-up coffee</p>
       <p class="label chip">Coming soon</p>
     </header>
 
@@ -546,32 +530,42 @@
           </svg>
         </div>
       </div>
-      <p class="hero-line">A pop-up coffee shop. Setting up soon.</p>
+      <p class="hero-line label">No permanent address.</p>
     </section>
+    <figure class="sneak">
+      <img src="midnight-campfire.png" alt="Midnight Campfire Latte" width="571" height="710">
+    </figure>
   </div>
 
-  <section class="manifesto grain-vermilion">
-    <p>Good coffee, loud graphics, no permanent address.</p>
+  <section class="vision grain-vermilion">
+    <p class="vision-lead">Stoked is not a coffee shop that happens to move. It’s a coffee shop that refuses to stay.</p>
+    <p class="vision-sub">A pop-up coffee shop you have to catch.</p>
   </section>
 
-  <section class="expect grain-paper">
-    <article class="expect-item expect-coffee">
-      <p class="label">The coffee</p>
-      <p>Hot. Cold. No theater.</p>
-      <figure class="print">
-        <div class="print-plate">
-          <img src="midnight-campfire.png" alt="Midnight Campfire Latte" width="571" height="710">
-        </div>
-        <figcaption class="label">Midnight Campfire</figcaption>
-      </figure>
+  <section class="ritual grain-paper">
+    <article class="step">
+      <p class="step-num" aria-hidden="true">
+        <span class="letter" style="transform:rotate(-5deg) translateY(0.04em)">0</span>
+        <span class="letter" style="transform:rotate(4deg) translateY(-0.03em)">1</span>
+      </p>
+      <p class="label">Tease</p>
+      <p>48 hours out, you get the date. Not the place.</p>
     </article>
-    <article class="expect-item">
-      <p class="label">The pop-ups</p>
-      <p>We show up. Then we don’t.</p>
+    <article class="step">
+      <p class="step-num" aria-hidden="true">
+        <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">0</span>
+        <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">2</span>
+      </p>
+      <p class="label">Confirm</p>
+      <p>The address drops the morning of. Set an alarm.</p>
     </article>
-    <article class="expect-item">
-      <p class="label">The merch</p>
-      <p>Loud graphics. Soft goods.</p>
+    <article class="step">
+      <p class="step-num" aria-hidden="true">
+        <span class="letter" style="transform:rotate(-4deg) translateY(0.03em)">0</span>
+        <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">3</span>
+      </p>
+      <p class="label">Vanish</p>
+      <p>We pour until the beans run out, then we’re gone.</p>
     </article>
   </section>
 
@@ -579,25 +573,37 @@
     <div class="popup-inner">
       <p class="label chip popup-kicker">Next pop-up</p>
       <div class="poster-stack">
-        <!-- Swap TBA letter spans for a real date, e.g. 0 9 / 2 6 -->
+        <!-- Swap the TBA spans for a real date -->
         <div class="poster-line">
-          <p class="label">Date</p>
           <p class="throwup" aria-label="Date to be announced">
-            <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">T</span>
-            <span class="letter" style="transform:rotate(4deg) translateY(-0.04em)">B</span>
-            <span class="letter" style="transform:rotate(-3deg) translateY(0.03em)">A</span>
+            <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">D</span>
+            <span class="letter" style="transform:rotate(4deg) translateY(-0.04em)">A</span>
+            <span class="letter" style="transform:rotate(-3deg) translateY(0.03em)">T</span>
+            <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">E</span>
+            <span class="letter throwup-dash">—</span>
+            <span class="letter" style="transform:rotate(-5deg) translateY(0.04em)">T</span>
+            <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">B</span>
+            <span class="letter" style="transform:rotate(-4deg) translateY(0.05em)">A</span>
           </p>
         </div>
         <div class="poster-line">
-          <p class="label">Location</p>
-          <p class="throwup" aria-label="Location to be announced">
-            <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">T</span>
-            <span class="letter" style="transform:rotate(-4deg) translateY(0.04em)">B</span>
-            <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">A</span>
+          <p class="throwup throwup-wide" aria-label="Location to be announced">
+            <span class="letter" style="transform:rotate(5deg) translateY(-0.04em)">L</span>
+            <span class="letter" style="transform:rotate(-4deg) translateY(0.04em)">O</span>
+            <span class="letter" style="transform:rotate(3deg) translateY(-0.03em)">C</span>
+            <span class="letter" style="transform:rotate(-6deg) translateY(0.03em)">A</span>
+            <span class="letter" style="transform:rotate(4deg) translateY(-0.04em)">T</span>
+            <span class="letter" style="transform:rotate(-3deg) translateY(0.04em)">I</span>
+            <span class="letter" style="transform:rotate(6deg) translateY(-0.05em)">O</span>
+            <span class="letter" style="transform:rotate(-2deg) translateY(0.03em)">N</span>
+            <span class="letter throwup-dash">—</span>
+            <span class="letter" style="transform:rotate(-5deg) translateY(0.04em)">T</span>
+            <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">B</span>
+            <span class="letter" style="transform:rotate(-4deg) translateY(0.03em)">A</span>
           </p>
         </div>
       </div>
-      <p class="popup-note">Follow <a href="https://instagram.com/stokedcoffee_" rel="noopener noreferrer">@stokedcoffee_</a> to find us.</p>
+      <p class="popup-note">You’ll find out where when we do.</p>
     </div>
   </section>
 
@@ -606,6 +612,7 @@
       <p class="label">The list</p>
       <h2>We’ll tell you where we set up.</h2>
       <p class="micro">Nothing else.</p>
+      <p class="fine">One email per pop-up. No newsletter.</p>
       <form class="signup-form" id="signup-form" data-on="true" novalidate>
         <label class="label" for="email">Email</label>
         <div class="field">
