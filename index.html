@@ -43,7 +43,26 @@
   <div class="opening grain-paper">
     <header class="topbar">
       <div class="brand-cluster">
-        <p class="label">Pop-up coffee</p>
+      <a class="mark" href="index.html" aria-label="Stoked Coffee">
+        <span class="wordmark">
+          <span class="wordmark-line wordmark-stoked" aria-hidden="true">
+            <span class="letter" style="--r:-7deg;--y:0.06em;--kick:11deg">S</span>
+            <span class="letter" style="--r:3deg;--y:-0.05em;--kick:-10deg">T</span>
+            <span class="letter" style="--r:-2deg;--y:0.04em;--kick:8deg">O</span>
+            <span class="letter" style="--r:6deg;--y:-0.04em;--kick:-12deg">K</span>
+            <span class="letter" style="--r:-4deg;--y:0.05em;--kick:10deg">E</span>
+            <span class="letter" style="--r:3deg;--y:-0.03em;--kick:-9deg">D</span>
+          </span>
+          <span class="wordmark-line wordmark-coffee" aria-hidden="true">
+            <span class="letter" style="--r:5deg;--y:-0.04em;--kick:-11deg">C</span>
+            <span class="letter" style="--r:-3deg;--y:0.04em;--kick:9deg">O</span>
+            <span class="letter" style="--r:3deg;--y:-0.04em;--kick:-8deg">F</span>
+            <span class="letter" style="--r:-6deg;--y:0.03em;--kick:12deg">F</span>
+            <span class="letter" style="--r:4deg;--y:-0.04em;--kick:-10deg">E</span>
+            <span class="letter" style="--r:-3deg;--y:0.04em;--kick:8deg">E</span>
+          </span>
+        </span>
+      </a>
         <p class="label chip">Coming soon</p>
       </div>
       <nav class="site-nav" aria-label="Primary">
@@ -109,32 +128,54 @@
     </div>
   </section>
 
-  <section class="ritual grain-paper">
+  <fieldset class="ritual grain-paper">
+    <legend class="sr-only">How a pop-up lands</legend>
     <article class="step">
-      <p class="step-num" aria-hidden="true">
-        <span class="letter" style="transform:rotate(-5deg) translateY(0.04em)">0</span>
-        <span class="letter" style="transform:rotate(4deg) translateY(-0.03em)">1</span>
-      </p>
-      <p class="label">Bloom</p>
-      <p>Date first. Two days out.</p>
+      <input class="step-check" type="radio" name="ritual" id="ritual-bloom" checked>
+      <label class="step-hit" for="ritual-bloom">
+        <span class="step-num" aria-hidden="true">
+          <span class="letter" style="--r:-5deg;--y:0.04em;--kick:10deg">0</span>
+          <span class="letter" style="--r:4deg;--y:-0.03em;--kick:-11deg">1</span>
+        </span>
+        <span class="label">Bloom</span>
+        <span class="step-copy">
+          <span class="step-lead">Date first. Two days out.</span>
+          <span class="step-more">The date lands first. Two days. Then the spot.</span>
+        </span>
+      </label>
     </article>
     <article class="step">
-      <p class="step-num" aria-hidden="true">
-        <span class="letter" style="transform:rotate(3deg) translateY(-0.04em)">0</span>
-        <span class="letter" style="transform:rotate(-6deg) translateY(0.05em)">2</span>
-      </p>
-      <p class="label">Steep</p>
-      <p>Spot next. Morning of.</p>
+      <input class="step-check" type="radio" name="ritual" id="ritual-steep">
+      <label class="step-hit" for="ritual-steep">
+        <span class="step-num" aria-hidden="true">
+          <span class="letter" style="--r:3deg;--y:-0.04em;--kick:-10deg">0</span>
+          <span class="letter" style="--r:-6deg;--y:0.05em;--kick:12deg">2</span>
+        </span>
+        <span class="label">Steep</span>
+        <span class="step-copy">
+          <span class="step-lead">Spot next. Morning of.</span>
+          <span class="step-more">The pin drops that morning. Not the night before.</span>
+        </span>
+      </label>
     </article>
     <article class="step">
-      <p class="step-num" aria-hidden="true">
-        <span class="letter" style="transform:rotate(-4deg) translateY(0.03em)">0</span>
-        <span class="letter" style="transform:rotate(5deg) translateY(-0.05em)">3</span>
-      </p>
-      <p class="label">Pour</p>
-      <p>Pour till dry. Already gone.</p>
+      <input class="step-check" type="radio" name="ritual" id="ritual-pour">
+      <label class="step-hit" for="ritual-pour">
+        <span class="step-num" aria-hidden="true">
+          <span class="letter" style="--r:-4deg;--y:0.03em;--kick:9deg">0</span>
+          <span class="letter" style="--r:5deg;--y:-0.05em;--kick:-11deg">3</span>
+        </span>
+        <span class="label">Pour</span>
+        <span class="step-copy">
+          <span class="step-lead">Pour till dry. Already gone.</span>
+          <span class="step-more">We brew until the beans are gone. Then we pack.</span>
+        </span>
+      </label>
     </article>
-  </section>
+    <div class="ritual-level" aria-hidden="true">
+      <i></i>
+    </div>
+  </fieldset>
 
   <section class="popup grain-ink">
     <div class="popup-inner">
