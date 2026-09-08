@@ -942,8 +942,8 @@ body > main {
 
 .crew {
   display: grid;
-  gap: 1rem;
-  margin: 2.5rem auto 0;
+  gap: 1.25rem;
+  margin: 3rem auto 0;
   width: 100%;
   max-width: 64rem;
   text-align: center;
@@ -953,7 +953,7 @@ body > main {
 .crew-card {
   position: relative;
   border: 6px solid var(--ink);
-  padding: 1.15rem 1rem 1.25rem;
+  padding: 1.35rem 1.1rem 1.4rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -975,9 +975,10 @@ body > main {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 100%;
-  height: 13rem;
-  margin: 0 auto 0.85rem;
+  height: 13.5rem;
+  margin: 0 auto 1rem;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -988,15 +989,27 @@ body > main {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 13rem;
+  max-height: 13.5rem;
   object-fit: contain;
 }
 
-.crew-fig img {
-  mix-blend-mode: multiply;
+.crew-fig .fig-hot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
 }
 
-.crew-fig-lid { height: 13rem; }
+.crew-card:hover .fig-rest,
+.crew-card:focus-within .fig-rest,
+.crew-card:has(.crew-check:checked) .fig-rest { visibility: hidden; }
+
+.crew-card:hover .fig-hot,
+.crew-card:focus-within .fig-hot,
+.crew-card:has(.crew-check:checked) .fig-hot { visibility: visible; }
+
+.crew-fig-lid { height: 13.5rem; }
 
 .crew-fig .steam { opacity: 0; }
 
