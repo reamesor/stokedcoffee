@@ -1508,6 +1508,7 @@ textarea.ink-field {
 .host-copy > p:not(.label) {
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
   max-width: 22em;
+  text-align: center;
 }
 
 .host-intro .route {
@@ -1550,7 +1551,7 @@ textarea.ink-field {
   border: 6px solid var(--ink);
   padding: 1.15rem 1.15rem 1.25rem;
   max-width: none;
-  text-align: left;
+  text-align: center;
 }
 
 .host-panel .form-stack {
@@ -1559,7 +1560,10 @@ textarea.ink-field {
   max-width: none;
 }
 
-.host-panel .form-stack label.label { margin-top: 0.55rem; }
+.host-panel .form-stack label.label {
+  margin-top: 0.55rem;
+  text-align: center;
+}
 
 .host-panel .form-stack label.label:first-child { margin-top: 0; }
 
@@ -1568,9 +1572,15 @@ textarea.ink-field {
   gap: 0.55rem;
 }
 
-.host-pair .label { margin-top: 0.55rem; }
+.host-pair .label {
+  margin-top: 0.55rem;
+  text-align: center;
+}
 
-.host-panel .ink-btn { margin-top: 0.85rem; }
+.host-panel .ink-btn {
+  margin-top: 0.85rem;
+  align-self: center;
+}
 
 @media (min-width: 860px) {
   .faq-grid {
@@ -1580,43 +1590,18 @@ textarea.ink-field {
   }
 
   .host-page {
-    grid-template-columns: 1.12fr 0.88fr;
-    gap: 3.25rem;
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
   }
 
   .host-intro {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-block: 0.25rem 0.15rem;
-    text-align: left;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
-
-  .host-intro .label,
-  .host-intro h1,
-  .host-copy > .label {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
-  }
-
-  .host-intro p,
-  .host-intro .route {
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  .host-copy > p:not(.label) {
-    max-width: none;
-  }
-
-  .host-intro .route {
-    max-width: none;
-  }
-
-  .host-kinds { justify-content: flex-start; }
 
   .crew {
     grid-template-columns: 1fr 1fr 1fr;
