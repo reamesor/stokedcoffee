@@ -583,6 +583,39 @@ a.chip:hover { color: var(--ink); }
 
 .credit-block p + p { margin-top: 0.55rem; }
 
+.credit-block a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.credit-block a:hover { color: var(--vermilion); }
+
+.art-credit {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+
+.art-credit a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.art-credit a:hover { color: var(--vermilion); }
+
+.hero .art-credit {
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.foot-art {
+  width: 100%;
+  color: var(--paper);
+  margin: 0;
+}
+
 .menu-grid {
   display: grid;
   gap: 1.25rem;
