@@ -624,12 +624,6 @@ a.chip:hover { color: var(--ink); }
   text-align: center;
 }
 
-.foot-art {
-  width: 100%;
-  color: var(--paper);
-  margin: 0;
-}
-
 .menu-grid {
   display: grid;
   gap: 1.25rem;
