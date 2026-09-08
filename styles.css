@@ -729,10 +729,18 @@ body > main {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) clamp(3.25rem, 8vw, 6rem);
 }
 
-.page-inner { max-width: 40rem; }
+.page-inner {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 .page-inner.wide { max-width: 72rem; }
 
 .page h1 {
@@ -745,6 +753,28 @@ body > main {
 
 .page p { max-width: 36em; }
 .page p + p { margin-top: 1rem; }
+
+.page-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36rem;
+}
+
+.page-center h1,
+.page-center p,
+.page-center .ghost-merch {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-center .ghost-merch {
+  max-width: 22rem;
+  height: 200px;
+  margin-top: 1.75rem;
+}
+
+.page-center .band-gap { margin-top: 1.75rem; }
 
 .next-lead {
   text-align: center;
@@ -790,9 +820,17 @@ body > main {
 
 .credit-block a:hover { color: var(--vermilion); }
 
-.story-page { max-width: 40rem; }
+.story-page {
+  text-align: center;
+  max-width: 40rem;
+}
 
 .story-page h1 { margin-bottom: 1.15rem; }
+
+.story-page .route {
+  margin: 0 auto 2rem;
+  max-width: 28rem;
+}
 
 .route {
   list-style: none;
@@ -836,7 +874,12 @@ body > main {
   background: var(--paper);
 }
 
-.story-copy { max-width: 520px; }
+.story-copy {
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
 
 .story-copy p { max-width: none; }
 
@@ -844,7 +887,8 @@ body > main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.85rem;
-  margin-top: 2.25rem;
+  margin: 2rem auto 0;
+  width: 100%;
   max-width: 40rem;
 }
 
@@ -853,6 +897,7 @@ body > main {
   border-radius: 8px;
   padding: 1rem;
   min-width: 0;
+  text-align: center;
 }
 
 .founder-card p + p { margin-top: 0; }
@@ -1035,6 +1080,20 @@ textarea.ink-field {
 
 .ink-field::placeholder { color: var(--ink); opacity: 0.4; }
 
+.ink-field[type="date"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  cursor: pointer;
+  color-scheme: light;
+}
+
+.ink-field[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 .ink-btn {
   appearance: none;
   min-height: 52px;
@@ -1121,15 +1180,28 @@ textarea.ink-field {
   margin-top: 0.75rem;
 }
 
+.faq-page {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .faq-page h1 { margin-bottom: 1.15rem; }
+
+.faq-page .route {
+  margin: 0 auto 2rem;
+  max-width: 28rem;
+}
 
 .faq-grid {
   display: grid;
   gap: 1.15rem;
   margin-top: 0.25rem;
+  text-align: left;
 }
 
-.faq-who { max-width: 34rem; }
+.faq-who { max-width: none; }
 
 .faq-who .qa-lead { margin: 0.35rem 0 0.75rem; }
 
@@ -1154,15 +1226,34 @@ textarea.ink-field {
   display: grid;
   gap: 1.75rem;
   align-items: start;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.host-intro { max-width: 34rem; }
+.host-intro {
+  text-align: center;
+  max-width: none;
+}
 
 .host-intro h1 { margin-bottom: 0.85rem; }
+
+.host-intro p,
+.host-intro .route {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.host-intro .route {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  max-width: 28rem;
+}
 
 .host-kinds {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.4rem;
   list-style: none;
   margin: 1.15rem 0 0;
@@ -1184,7 +1275,8 @@ textarea.ink-field {
 .host-panel {
   border: 6px solid var(--ink);
   padding: 1.15rem 1.15rem 1.25rem;
-  max-width: 36rem;
+  max-width: none;
+  text-align: left;
 }
 
 .host-panel .form-stack {
@@ -1208,14 +1300,15 @@ textarea.ink-field {
 
 @media (min-width: 860px) {
   .faq-grid {
-    grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+    grid-template-columns: 1fr 1fr;
     align-items: start;
     gap: 2rem;
   }
 
   .host-page {
-    grid-template-columns: minmax(0, 1fr) minmax(20rem, 26rem);
+    grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
+    align-items: center;
   }
 }
 
