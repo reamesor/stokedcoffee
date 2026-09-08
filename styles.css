@@ -776,6 +776,7 @@ body > main {
 .page-inner > .label,
 .story-lead > .label,
 .host-intro > .label,
+.host-copy > .label,
 .next-lead > .label {
   max-width: none;
   width: 100%;
@@ -786,7 +787,7 @@ body > main {
 
 .page-inner > h1,
 .story-lead > h1,
-.host-intro > h1,
+.host-intro h1,
 .next-lead > h1 {
   text-align: center;
 }
@@ -1476,9 +1477,9 @@ textarea.ink-field {
 
 .host-page {
   display: grid;
-  gap: 1.75rem;
+  gap: 2rem;
   align-items: start;
-  max-width: 56rem;
+  max-width: 66rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1488,9 +1489,13 @@ textarea.ink-field {
   max-width: none;
 }
 
-.host-intro h1 { margin-bottom: 0.85rem; }
+.host-intro h1 {
+  font-size: clamp(2.05rem, 4.4vw, 3.15rem);
+  line-height: 1;
+  margin-bottom: 1.1rem;
+}
 
-.host-intro > .label {
+.host-intro .label {
   max-width: none;
 }
 
@@ -1500,31 +1505,44 @@ textarea.ink-field {
   margin-right: auto;
 }
 
-.host-intro .route {
-  margin-top: 1.25rem;
-  margin-bottom: 0;
-  max-width: 28rem;
+.host-copy > p:not(.label) {
+  font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+  max-width: 22em;
 }
+
+.host-intro .route {
+  margin-top: 1.85rem;
+  margin-bottom: 0;
+  max-width: 32rem;
+  width: 100%;
+}
+
+.host-intro .route-dot {
+  width: 15px;
+  height: 15px;
+}
+
+.host-intro .route::before { top: 7.5px; }
 
 .host-kinds {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   list-style: none;
-  margin: 1.15rem 0 0;
+  margin: 1.65rem 0 0;
   padding: 0;
 }
 
 .host-kinds li {
-  border: 3px solid var(--ink);
-  min-height: 44px;
+  border: 4px solid var(--ink);
+  min-height: 50px;
   display: inline-flex;
   align-items: center;
-  padding: 0 0.75rem;
+  padding: 0 0.95rem;
   font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 0.22em;
+  font-size: 13px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
@@ -1562,10 +1580,43 @@ textarea.ink-field {
   }
 
   .host-page {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    align-items: center;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 3.25rem;
+    align-items: stretch;
   }
+
+  .host-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 0.25rem 0.15rem;
+    text-align: left;
+  }
+
+  .host-intro .label,
+  .host-intro h1,
+  .host-copy > .label {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+
+  .host-intro p,
+  .host-intro .route {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .host-copy > p:not(.label) {
+    max-width: none;
+  }
+
+  .host-intro .route {
+    max-width: none;
+  }
+
+  .host-kinds { justify-content: flex-start; }
 
   .crew {
     grid-template-columns: 1fr 1fr 1fr;
