@@ -742,6 +742,7 @@ body > main {
   margin-right: auto;
 }
 .page-inner.wide { max-width: 72rem; }
+.page-inner.wide.faq-page { max-width: 86rem; }
 
 .page h1 {
   font-size: clamp(1.7rem, 3.8vw, 2.4rem);
@@ -1181,7 +1182,7 @@ textarea.ink-field {
 }
 
 .faq-page {
-  max-width: 56rem;
+  max-width: 86rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -1192,42 +1193,66 @@ textarea.ink-field {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  font-size: 14px;
 }
 
 .faq-page h1 {
-  margin-top: 0.55rem;
-  margin-bottom: 1.15rem;
+  font-size: clamp(2.2rem, 5.2vw, 3.2rem);
+  margin-top: 0.65rem;
+  margin-bottom: 1.5rem;
 }
 
 .faq-page .route {
-  margin: 0 auto 2rem;
-  max-width: 28rem;
+  margin: 0 auto 2.75rem;
+  max-width: 40rem;
 }
+
+.faq-page .route-dot {
+  width: 16px;
+  height: 16px;
+}
+
+.faq-page .route::before { top: 8px; }
 
 .faq-grid {
   display: grid;
-  gap: 1.15rem;
-  margin-top: 0.25rem;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
   text-align: left;
 }
 
 .faq-who { max-width: none; }
 
-.faq-who .qa-lead { margin: 0.35rem 0 0.75rem; }
+.faq-who p { max-width: none; }
+
+.faq-who .qa-lead {
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  max-width: none;
+  margin: 0.45rem 0 1rem;
+}
+
+.faq-who .qa-copy {
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.5;
+  max-width: none;
+}
+
+.faq-who .qa-copy + .qa-copy { margin-top: 0.9rem; }
 
 .faq-stamps {
   display: grid;
-  gap: 0.85rem;
+  gap: 1.15rem;
 }
 
 .faq-stamp {
   border: 6px solid var(--ink);
-  padding: 1.1rem 1.15rem 1.2rem;
+  padding: 1.5rem 1.55rem 1.6rem;
 }
 
-.faq-stamp .label { margin-bottom: 0.45rem; }
+.faq-stamp .label { margin-bottom: 0.55rem; }
 
 .faq-stamp .qa-lead {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
   max-width: none;
   margin: 0;
 }
@@ -1310,9 +1335,9 @@ textarea.ink-field {
 
 @media (min-width: 860px) {
   .faq-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
     align-items: start;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .host-page {
