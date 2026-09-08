@@ -1012,6 +1012,19 @@ body > main {
   max-width: none;
 }
 
+.crew-aka {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  max-width: none;
+}
+
+.crew-aka a { text-decoration: none; }
+
+.crew-aka a:hover { color: var(--vermilion); }
+
 .illust-credit {
   margin-top: 1.25rem;
   font-size: 12px;
