@@ -26,6 +26,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Bagel+Fat+One&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F03A14'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-size='18' font-family='Arial Black,sans-serif' fill='%23111111'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .merch-teaser {
+      position: relative;
+      width: 100%;
+      max-width: 36rem;
+      aspect-ratio: 16 / 10;
+      margin: 2rem auto 0;
+      background: #0a0a12;
+      border: 6px solid var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .merch-teaser canvas {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .merch-teaser-grain {
+      mix-blend-mode: overlay;
+      opacity: 0.38;
+      pointer-events: none;
+    }
+
+    .merch-teaser-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 32%, rgba(0, 0, 0, 0.7) 100%);
+      pointer-events: none;
+    }
+
+    .page-center .merch-teaser-cap {
+      position: absolute;
+      left: 0.75rem;
+      right: 0.75rem;
+      bottom: 0.85rem;
+      margin: 0;
+      max-width: none;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-align: center;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
   <header class="topbar grain-paper">
@@ -66,7 +116,12 @@
       <p class="label">Merch</p>
       <h1>Merch is brewing.</h1>
       <p>Something to hold onto between pop-ups.</p>
-      <div class="ghost-merch grain-ink" aria-hidden="true"><span></span></div>
+      <div class="merch-teaser" data-merch-teaser aria-hidden="true">
+        <canvas class="merch-teaser-scene"></canvas>
+        <canvas class="merch-teaser-grain"></canvas>
+        <div class="merch-teaser-vignette"></div>
+        <p class="merch-teaser-cap">STOKED COFFEE · MERCH IS BREWING</p>
+      </div>
       <p class="band-gap">No shop yet. No prices. Just presence.</p>
     </div>
   </main>
@@ -85,5 +140,6 @@
       <a href="privacy.html">Privacy</a>
     </nav>
   </footer>
+  <script src="merch-teaser.js"></script>
 </body>
 </html>
