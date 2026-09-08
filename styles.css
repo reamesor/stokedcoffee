@@ -505,6 +505,29 @@ a.chip:hover { color: var(--ink); }
 
 .page-bar { flex-wrap: wrap; }
 
+.mast {
+  display: flex;
+  flex-direction: column;
+}
+
+.mast .topbar {
+  border-bottom: 0;
+}
+
+.bar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.15rem;
+  width: 100%;
+  padding: 0 1.25rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 6px solid var(--ink);
+}
+
+@media (min-width: 720px) {
+  .bar-nav { padding: 0 2rem; }
+}
+
 .mark-link {
   text-decoration: none;
   min-height: 44px;
@@ -535,15 +558,6 @@ a.chip:hover { color: var(--ink); }
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] { color: var(--vermilion); }
-
-@media (min-width: 900px) {
-  .page-bar { flex-wrap: nowrap; }
-  .site-nav {
-    width: auto;
-    justify-content: flex-end;
-    flex: 1;
-  }
-}
 
 .page {
   padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) clamp(3.25rem, 8vw, 6rem);
