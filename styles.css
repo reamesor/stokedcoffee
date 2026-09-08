@@ -1033,6 +1033,15 @@ body > main {
 
 .crew-aka a:hover { color: var(--vermilion); }
 
+.crew-card:hover .crew-aka a,
+.crew-card:hover .crew-aka a:hover,
+.crew-card:focus-within .crew-aka a,
+.crew-card:focus-within .crew-aka a:hover,
+.crew-card:has(.crew-check:checked) .crew-aka a,
+.crew-card:has(.crew-check:checked) .crew-aka a:hover {
+  color: var(--ink);
+}
+
 .crew-more {
   display: block;
   visibility: hidden;
@@ -1049,6 +1058,19 @@ body > main {
 .crew-card:hover .crew-more,
 .crew-card:focus-within .crew-more,
 .crew-card:has(.crew-check:checked) .crew-more { visibility: visible; }
+
+.spirit {
+  display: flex;
+  justify-content: center;
+  margin: 1.15rem auto 0;
+  width: 100%;
+  max-width: 64rem;
+}
+
+.spirit-card {
+  width: 100%;
+  max-width: 20.5rem;
+}
 
 .founder-card {
   border: 0.5px solid var(--ink);
@@ -1074,6 +1096,15 @@ body > main {
 .founder-name a { text-decoration: none; }
 
 .founder-name a:hover { color: var(--vermilion); }
+
+.crew-card:hover .founder-name a,
+.crew-card:hover .founder-name a:hover,
+.crew-card:focus-within .founder-name a,
+.crew-card:focus-within .founder-name a:hover,
+.crew-card:has(.crew-check:checked) .founder-name a,
+.crew-card:has(.crew-check:checked) .founder-name a:hover {
+  color: var(--ink);
+}
 
 .founder-role {
   font-size: 0.85rem;
