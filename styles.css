@@ -824,10 +824,20 @@ textarea.ink-field {
 
 .qa .label { margin-bottom: 0.45rem; }
 
+.qa-lead,
 .qa p:last-of-type {
   font-size: clamp(1.15rem, 2.3vw, 1.5rem);
   font-weight: 600;
   line-height: 1.2;
   max-width: 22em;
+}
+
+.qa .qa-copy,
+.qa p.qa-copy:last-of-type {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 36em;
+  margin-top: 0.75rem;
 }
 
