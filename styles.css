@@ -419,6 +419,7 @@ a { color: inherit; }
 
 .popup-hot {
   color: var(--ink);
+  padding: 1.85rem clamp(1.25rem, 5vw, 4rem) 2rem;
 }
 
 .popup-hot .chip {
@@ -432,17 +433,35 @@ a { color: inherit; }
   filter: drop-shadow(0.07em 0.08em 0 var(--ink));
 }
 
+.popup-hot .popup-kicker { margin-bottom: 0.7rem; }
+
+.popup-hot .poster-line { margin-top: 0.45rem; }
+
+.popup-hot .popup-note { margin-top: 0.95rem; }
+
 .popup-hot .map-slot {
   border-color: var(--ink);
   background: var(--grain-paper), var(--paper);
   background-blend-mode: multiply;
+  margin-top: 1rem;
+  min-height: 0;
+  padding: 0.85rem 1rem;
 }
+
+.popup-hot .beans { margin-top: 1.1rem; }
 
 .signup {
   padding: clamp(3.25rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
 }
 
-.signup-inner { max-width: 36rem; }
+.signup-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.signup-copy { max-width: 34rem; }
 
 .signup h2 {
   font-size: clamp(1.7rem, 3.8vw, 2.4rem);
@@ -460,8 +479,10 @@ a { color: inherit; }
 .signup .fine {
   font-size: 16px;
   font-weight: 500;
-  margin: 0.35rem 0 1.5rem;
+  margin: 0.35rem 0 0;
 }
+
+.signup-side { min-width: 0; }
 
 .signup-form { display: flex; flex-direction: column; gap: 0.65rem; }
 
@@ -529,6 +550,16 @@ a { color: inherit; }
   line-height: 1.05;
 }
 
+.signup .confirm {
+  border: 6px solid var(--ink);
+  padding: 1.5rem 1.25rem;
+  min-height: 8.5rem;
+  display: none;
+  align-items: center;
+}
+
+.signup .confirm[data-on="true"] { display: flex; }
+
 .site-footer {
   color: var(--paper);
   padding: 1.75rem clamp(1.25rem, 5vw, 4rem);
@@ -581,6 +612,12 @@ a { color: inherit; }
 
   .signup input[type="email"] { flex: 1; }
   .signup button { min-width: 11.5rem; }
+
+  .signup-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+    align-items: center;
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 540px) {
@@ -595,6 +632,8 @@ a { color: inherit; }
     right: 0.15rem;
     transform: translateY(50%) rotate(8deg);
   }
+
+  .founder-grid { grid-template-columns: 1fr; }
 }
 
 .chip { text-decoration: none; }
@@ -707,6 +746,24 @@ body > main {
 .page p { max-width: 36em; }
 .page p + p { margin-top: 1rem; }
 
+.next-lead {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.next-lead h1,
+.next-lead p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.next-lead .clock {
+  justify-content: center;
+}
+
+.next-lead .clock-cell { align-items: center; }
+
 .band-gap { margin-top: clamp(2.75rem, 7vw, 4.5rem); }
 
 .credit-block {
@@ -732,6 +789,106 @@ body > main {
 }
 
 .credit-block a:hover { color: var(--vermilion); }
+
+.story-page { max-width: 40rem; }
+
+.story-page h1 { margin-bottom: 1.15rem; }
+
+.route {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  max-width: 32.5rem;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.route::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 16%;
+  right: 16%;
+  border-top: 2px dashed var(--ink);
+}
+
+.route-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.route-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px var(--paper);
+}
+
+.route-stop[data-on="false"] .route-dot {
+  background: var(--paper);
+}
+
+.story-copy { max-width: 520px; }
+
+.story-copy p { max-width: none; }
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 2.25rem;
+  max-width: 40rem;
+}
+
+.founder-card {
+  border: 0.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 0;
+}
+
+.founder-card p + p { margin-top: 0; }
+
+.founder-card .label { margin-bottom: 0.55rem; }
+
+.founder-name {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+  max-width: none;
+}
+
+.founder-name a { text-decoration: none; }
+
+.founder-name a:hover { color: var(--vermilion); }
+
+.founder-role {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-top: 0.3rem;
+  max-width: none;
+}
+
+.illust-credit {
+  margin-top: 1.25rem;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 40rem;
+}
+
+.illust-credit a { font-weight: 800; }
 
 .menu-grid {
   display: grid;
@@ -962,5 +1119,107 @@ textarea.ink-field {
   line-height: 1.45;
   max-width: 36em;
   margin-top: 0.75rem;
+}
+
+.faq-page h1 { margin-bottom: 1.15rem; }
+
+.faq-grid {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 0.25rem;
+}
+
+.faq-who { max-width: 34rem; }
+
+.faq-who .qa-lead { margin: 0.35rem 0 0.75rem; }
+
+.faq-stamps {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.faq-stamp {
+  border: 6px solid var(--ink);
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.faq-stamp .label { margin-bottom: 0.45rem; }
+
+.faq-stamp .qa-lead {
+  max-width: none;
+  margin: 0;
+}
+
+.host-page {
+  display: grid;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.host-intro { max-width: 34rem; }
+
+.host-intro h1 { margin-bottom: 0.85rem; }
+
+.host-kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 1.15rem 0 0;
+  padding: 0;
+}
+
+.host-kinds li {
+  border: 3px solid var(--ink);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.host-panel {
+  border: 6px solid var(--ink);
+  padding: 1.15rem 1.15rem 1.25rem;
+  max-width: 36rem;
+}
+
+.host-panel .form-stack {
+  margin-top: 0;
+  gap: 0.45rem;
+  max-width: none;
+}
+
+.host-panel .form-stack label.label { margin-top: 0.55rem; }
+
+.host-panel .form-stack label.label:first-child { margin-top: 0; }
+
+.host-pair {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.host-pair .label { margin-top: 0.55rem; }
+
+.host-panel .ink-btn { margin-top: 0.85rem; }
+
+@media (min-width: 860px) {
+  .faq-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .host-page {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 26rem);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 560px) {
+  .host-pair { grid-template-columns: 1fr 1fr; }
 }
 

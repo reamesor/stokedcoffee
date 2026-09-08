@@ -62,22 +62,41 @@
     </nav>
   </header>
   <main class="page grain-paper">
-    <div class="page-inner wide">
+    <div class="page-inner wide faq-page">
       <p class="label">FAQ</p>
       <h1>How it works.</h1>
-      <article class="qa">
-        <p class="label">Who we are</p>
-        <p class="qa-lead">Stoked is a pop-up.</p>
-        <p class="qa-copy">Not a place you go to sit still — a place you go to have fun and grow.</p>
-        <p class="qa-copy">We want coffee to do what it’s always done best: bring people together. That’s it. That’s the goal. Good coffee, real connection, wherever we land next.</p>
-      </article>
-      <article class="qa">
-        <p>Catch it or miss it.</p>
-      </article>
-      <article class="qa">
-        <p class="label">If the beans run out</p>
-        <p>We pour until they’re gone. Then we’re gone. That’s the deal.</p>
-      </article>
+      <ol class="route" aria-label="How a stop goes">
+        <li class="route-stop" data-on="true">
+          <span class="route-dot" aria-hidden="true"></span>
+          <span class="label">Land</span>
+        </li>
+        <li class="route-stop" data-on="true">
+          <span class="route-dot" aria-hidden="true"></span>
+          <span class="label">Pour</span>
+        </li>
+        <li class="route-stop" data-on="false">
+          <span class="route-dot" aria-hidden="true"></span>
+          <span class="label">Gone</span>
+        </li>
+      </ol>
+      <div class="faq-grid">
+        <article class="faq-who">
+          <p class="label">Who we are</p>
+          <p class="qa-lead">Stoked is a pop-up.</p>
+          <p class="qa-copy">Not a place you go to sit still — a place you go to have fun and grow.</p>
+          <p class="qa-copy">We want coffee to do what it’s always done best: bring people together. That’s it. That’s the goal. Good coffee, real connection, wherever we land next.</p>
+        </article>
+        <div class="faq-stamps">
+          <article class="faq-stamp grain-vermilion">
+            <p class="label">The rule</p>
+            <p class="qa-lead">Catch it or miss it.</p>
+          </article>
+          <article class="faq-stamp">
+            <p class="label">If the beans run out</p>
+            <p class="qa-lead">We pour until they’re gone. Then we’re gone. That’s the deal.</p>
+          </article>
+        </div>
+      </div>
     </div>
   </main>
   <footer class="site-footer grain-ink">

@@ -243,19 +243,23 @@
 
   <section class="signup grain-paper" id="list">
     <div class="signup-inner">
-      <p class="label">The list</p>
-      <h2>We’ll tell you where we set up.</h2>
-      <p class="micro">Nothing else.</p>
-      <p class="fine">One email per pop-up. No newsletter.</p>
-      <form class="signup-form" id="signup-form" data-on="true" novalidate>
-        <label class="label" for="email">Email</label>
-        <div class="field">
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@there.com">
-          <button type="submit">On the list</button>
+      <div class="signup-copy">
+        <p class="label">The list</p>
+        <h2>We’ll tell you where we set up.</h2>
+        <p class="micro">Nothing else.</p>
+        <p class="fine">One email per pop-up. No newsletter.</p>
+      </div>
+      <div class="signup-side">
+        <form class="signup-form" id="signup-form" data-on="true" novalidate>
+          <label class="label" for="email">Email</label>
+          <div class="field">
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@there.com">
+            <button type="submit">On the list</button>
+          </div>
+        </form>
+        <div class="confirm" id="signup-confirm" data-on="false" role="status">
+          <p>You’re on the list.</p>
         </div>
-      </form>
-      <div class="confirm" id="signup-confirm" data-on="false" role="status">
-        <p>You’re on the list.</p>
       </div>
     </div>
   </section>

@@ -62,31 +62,60 @@
     </nav>
   </header>
   <main class="page grain-paper">
-    <div class="page-inner">
-      <p class="label">Host us</p>
-      <h1>Want Stoked at your space or event? We’re in.</h1>
-      <p>Cafes. Events. Brands. Write it down. We’ll read it.</p>
-      <form class="form-stack host-form" id="host-form" data-on="true">
-        <label class="label" for="host-name">Name</label>
-        <input class="ink-field" id="host-name" name="name" type="text" autocomplete="name" required>
-        <label class="label" for="host-email">Email</label>
-        <input class="ink-field" id="host-email" name="email" type="email" autocomplete="email" required>
-        <label class="label" for="host-type">Event type</label>
-        <select class="ink-field" id="host-type" name="type" required>
-          <option value="" disabled selected>Pick one</option>
-          <option>Cafe</option>
-          <option>Event</option>
-          <option>Brand</option>
-          <option>Other</option>
-        </select>
-        <label class="label" for="host-date">Proposed date</label>
-        <input class="ink-field" id="host-date" name="date" type="text" placeholder="whenever it is">
-        <label class="label" for="host-turnout">Expected turnout</label>
-        <input class="ink-field" id="host-turnout" name="turnout" type="text" inputmode="numeric" placeholder="a number, roughly">
-        <button class="ink-btn" type="submit">Send it</button>
-      </form>
-      <div class="confirm" id="host-confirm" data-on="false" role="status">
-        <p>Got it. We’ll write back.</p>
+    <div class="page-inner wide host-page">
+      <div class="host-intro">
+        <p class="label">Host us</p>
+        <h1>Want Stoked at your space or event? We’re in.</h1>
+        <p>Cafes. Events. Brands. Write it down. We’ll read it.</p>
+        <ol class="route" aria-label="How hosting goes">
+          <li class="route-stop" data-on="true">
+            <span class="route-dot" aria-hidden="true"></span>
+            <span class="label">Write</span>
+          </li>
+          <li class="route-stop" data-on="true">
+            <span class="route-dot" aria-hidden="true"></span>
+            <span class="label">Land</span>
+          </li>
+          <li class="route-stop" data-on="false">
+            <span class="route-dot" aria-hidden="true"></span>
+            <span class="label">Pour</span>
+          </li>
+        </ol>
+        <ul class="host-kinds">
+          <li>Cafes</li>
+          <li>Events</li>
+          <li>Brands</li>
+        </ul>
+      </div>
+      <div class="host-panel">
+        <form class="form-stack host-form" id="host-form" data-on="true">
+          <label class="label" for="host-name">Name</label>
+          <input class="ink-field" id="host-name" name="name" type="text" autocomplete="name" required>
+          <label class="label" for="host-email">Email</label>
+          <input class="ink-field" id="host-email" name="email" type="email" autocomplete="email" required>
+          <div class="host-pair">
+            <div>
+              <label class="label" for="host-type">Event type</label>
+              <select class="ink-field" id="host-type" name="type" required>
+                <option value="" disabled selected>Pick one</option>
+                <option>Cafe</option>
+                <option>Event</option>
+                <option>Brand</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="label" for="host-date">Proposed date</label>
+              <input class="ink-field" id="host-date" name="date" type="text" placeholder="whenever it is">
+            </div>
+          </div>
+          <label class="label" for="host-turnout">Expected turnout</label>
+          <input class="ink-field" id="host-turnout" name="turnout" type="text" inputmode="numeric" placeholder="a number, roughly">
+          <button class="ink-btn" type="submit">Send it</button>
+        </form>
+        <div class="confirm" id="host-confirm" data-on="false" role="status">
+          <p>Got it. We’ll write back.</p>
+        </div>
       </div>
     </div>
   </main>
