@@ -639,7 +639,6 @@ a { color: inherit; }
   }
 
   .founder-grid { grid-template-columns: 1fr; }
-  .crew { grid-template-columns: 1fr; }
 }
 
 .chip { text-decoration: none; }
@@ -752,6 +751,10 @@ body > main {
   padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem) clamp(3.25rem, 8vw, 6rem);
 }
 
+.page:has(.story-page) {
+  padding: clamp(1.15rem, 3.2vw, 2.1rem) clamp(1.1rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.4rem);
+}
+
 .page-inner {
   width: 100%;
   max-width: 40rem;
@@ -759,7 +762,7 @@ body > main {
   margin-right: auto;
 }
 .page-inner.wide { max-width: 72rem; }
-.page-inner.wide.story-page { max-width: 64rem; }
+.page-inner.wide.story-page { max-width: 72rem; }
 .page-inner.wide.faq-page { max-width: 86rem; }
 
 .page h1 {
@@ -864,22 +867,41 @@ body > main {
 .credit-block a:hover { color: var(--vermilion); }
 
 .story-page {
-  text-align: center;
-  max-width: 64rem;
+  text-align: left;
+  max-width: 72rem;
 }
 
 .story-lead {
   max-width: 40rem;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 auto 1.25rem;
+  text-align: left;
 }
 
-.story-page h1 { margin-bottom: 1.15rem; }
+.story-lead > .label,
+.story-lead > h1 {
+  text-align: left;
+  margin-left: 0;
+  width: auto;
+}
+
+.story-page h1 {
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+  margin-bottom: 0.85rem;
+}
 
 .story-page .route {
-  margin: 0 auto 2rem;
-  max-width: 28rem;
+  margin: 0 0 1.15rem;
+  max-width: 24rem;
 }
+
+.story-copy {
+  max-width: 36rem;
+  margin: 0;
+  text-align: left;
+}
+
+.story-copy p { max-width: none; }
+.story-copy p + p { margin-top: 0.7rem; }
 
 .route {
   list-style: none;
@@ -923,15 +945,6 @@ body > main {
   background: var(--paper);
 }
 
-.story-copy {
-  max-width: 32rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.story-copy p { max-width: none; }
-
 .founder-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -943,8 +956,9 @@ body > main {
 
 .crew {
   display: grid;
-  gap: 1.25rem;
-  margin: 3rem auto 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0 auto;
   width: 100%;
   max-width: 64rem;
   text-align: center;
@@ -954,7 +968,7 @@ body > main {
 .crew-card {
   position: relative;
   border: 6px solid var(--ink);
-  padding: 1.35rem 1.1rem 1.4rem;
+  padding: 0.55rem 0.55rem 0.6rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -964,7 +978,7 @@ body > main {
 
 .crew-card p { max-width: none; }
 .crew-card p + p { margin-top: 0.2rem; }
-.crew-card .label { margin-bottom: 0.5rem; }
+.crew-card .label { margin-bottom: 0.25rem; }
 
 .crew-check {
   position: absolute;
@@ -978,8 +992,8 @@ body > main {
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 13.5rem;
-  margin: 0 auto 1rem;
+  height: 6.6rem;
+  margin: 0 auto 0.35rem;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -990,7 +1004,7 @@ body > main {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 13.5rem;
+  max-height: 6.6rem;
   object-fit: contain;
 }
 
@@ -1010,7 +1024,7 @@ body > main {
 .crew-card:focus-within .fig-hot,
 .crew-card:has(.crew-check:checked) .fig-hot { visibility: visible; }
 
-.crew-fig-lid { height: 13.5rem; }
+.crew-fig-lid { height: 6.6rem; }
 
 .crew-fig .steam { opacity: 0; }
 
@@ -1060,12 +1074,12 @@ body > main {
   display: block;
   visibility: hidden;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin-top: auto;
-  padding-top: 0.65rem;
-  min-height: 2.6em;
+  padding-top: 0.4rem;
+  min-height: 1.7em;
   max-width: none;
 }
 
@@ -1603,10 +1617,25 @@ textarea.ink-field {
     text-align: center;
   }
 
+  .story-page {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.92fr) minmax(22rem, 1.08fr);
+    gap: 1.5rem 2rem;
+    align-items: start;
+  }
+
+  .story-lead {
+    max-width: none;
+    margin: 0;
+  }
+
+  .story-copy { max-width: none; }
+
   .crew {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.15rem;
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 0;
+    max-width: none;
   }
 }
 
