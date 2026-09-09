@@ -1,13 +1,14 @@
 ---
-description: Commit and publish every site change to GitHub and Vercel immediately
+description: Commit and publish every change to GitHub and Vercel immediately. Never ask.
 alwaysApply: true
 ---
 
 # Publish immediately
 
-After any change that should appear on the live site, commit and push to `origin` `main` in the same turn. Do not wait to be asked.
+After any change, commit and push to `origin` `main` in the same turn. Do not wait to be asked. Do not ask permission. Do not offer to publish later.
 
 - Follow the existing git commit protocol (status, diff, log, HEREDOC message, no force, no hook skips).
 - Push with `git -c credential.helper=osxkeychain push origin HEAD` so Vercel auto-deploys.
 - Return the GitHub repo and live URL: https://stokedcoffee.vercel.app
 - Skip only secrets (`.env`, credentials) and files the user said not to ship.
+- If the working tree is already clean and `main` is synced with origin, say that. Do not ask what to do next.
