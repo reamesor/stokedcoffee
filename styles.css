@@ -867,21 +867,23 @@ body > main {
 .credit-block a:hover { color: var(--vermilion); }
 
 .story-page {
-  text-align: left;
+  text-align: center;
   max-width: 72rem;
 }
 
 .story-lead {
-  max-width: 40rem;
+  max-width: 28rem;
   margin: 0 auto 1.25rem;
-  text-align: left;
+  text-align: center;
+  padding: 0 0.35rem;
 }
 
 .story-lead > .label,
 .story-lead > h1 {
-  text-align: left;
-  margin-left: 0;
-  width: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .story-page h1 {
@@ -890,14 +892,14 @@ body > main {
 }
 
 .story-page .route {
-  margin: 0 0 1.15rem;
-  max-width: 24rem;
+  margin: 0 auto 1.15rem;
+  max-width: 22rem;
 }
 
 .story-copy {
-  max-width: 36rem;
-  margin: 0;
-  text-align: left;
+  max-width: 26rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .story-copy p { max-width: none; }
@@ -968,12 +970,32 @@ body > main {
 .crew-card {
   position: relative;
   border: 6px solid var(--ink);
-  padding: 0.55rem 0.55rem 0.6rem;
+  padding: 0.7rem 0.75rem 0.85rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+}
+
+.crew > .crew-card:nth-child(1) {
+  border-radius: 58% 42% 55% 45% / 46% 54% 42% 58%;
+  transform: rotate(-2.2deg);
+}
+
+.crew > .crew-card:nth-child(2) {
+  border-radius: 42% 58% 48% 52% / 55% 42% 58% 45%;
+  transform: rotate(1.9deg);
+}
+
+.crew > .crew-card:nth-child(3) {
+  border-radius: 52% 48% 42% 58% / 42% 58% 48% 52%;
+  transform: rotate(2.4deg);
+}
+
+.crew > .crew-card:nth-child(4) {
+  border-radius: 48% 52% 58% 42% / 58% 45% 42% 55%;
+  transform: rotate(-1.8deg);
 }
 
 .crew-card p { max-width: none; }
@@ -1039,6 +1061,30 @@ body > main {
 .crew-card:focus-within .crew-fig,
 .crew-card:has(.crew-check:checked) .crew-fig {
   transform: rotate(-5deg) translateY(-5px);
+}
+
+.crew > .crew-card:nth-child(1):hover,
+.crew > .crew-card:nth-child(1):focus-within,
+.crew > .crew-card:nth-child(1):has(.crew-check:checked) {
+  transform: rotate(-3.2deg);
+}
+
+.crew > .crew-card:nth-child(2):hover,
+.crew > .crew-card:nth-child(2):focus-within,
+.crew > .crew-card:nth-child(2):has(.crew-check:checked) {
+  transform: rotate(3deg);
+}
+
+.crew > .crew-card:nth-child(3):hover,
+.crew > .crew-card:nth-child(3):focus-within,
+.crew > .crew-card:nth-child(3):has(.crew-check:checked) {
+  transform: rotate(3.4deg);
+}
+
+.crew > .crew-card:nth-child(4):hover,
+.crew > .crew-card:nth-child(4):focus-within,
+.crew > .crew-card:nth-child(4):has(.crew-check:checked) {
+  transform: rotate(-2.8deg);
 }
 
 .crew-card:hover .steam,
@@ -1619,23 +1665,28 @@ textarea.ink-field {
 
   .story-page {
     display: grid;
-    grid-template-columns: minmax(16rem, 0.92fr) minmax(22rem, 1.08fr);
-    gap: 1.5rem 2rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 2.25rem;
+    align-items: center;
   }
 
   .story-lead {
-    max-width: none;
-    margin: 0;
+    max-width: 28rem;
+    margin: 0 auto;
+    padding: 0 0.75rem;
   }
 
-  .story-copy { max-width: none; }
+  .story-copy {
+    max-width: 26rem;
+    margin: 0 auto;
+  }
 
   .crew {
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: 1.05rem 1.15rem;
     margin: 0;
     max-width: none;
+    padding: 0.35rem 0.2rem;
   }
 }
 
