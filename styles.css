@@ -752,7 +752,8 @@ body > main {
 }
 
 .page:has(.story-page) {
-  padding: clamp(1.15rem, 3.2vw, 2.1rem) clamp(1.1rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.4rem);
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem) clamp(1.75rem, 4.5vw, 3.25rem);
+  justify-content: center;
 }
 
 .page-inner {
@@ -762,7 +763,7 @@ body > main {
   margin-right: auto;
 }
 .page-inner.wide { max-width: 72rem; }
-.page-inner.wide.story-page { max-width: 72rem; }
+.page-inner.wide.story-page { max-width: 40rem; }
 .page-inner.wide.faq-page { max-width: 86rem; }
 
 .page h1 {
@@ -868,14 +869,16 @@ body > main {
 
 .story-page {
   text-align: center;
-  max-width: 72rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .story-lead {
-  max-width: 28rem;
-  margin: 0 auto 1.25rem;
+  max-width: none;
+  margin: 0 auto;
   text-align: center;
-  padding: 0 0.35rem;
+  padding: 0;
 }
 
 .story-lead > .label,
@@ -887,23 +890,35 @@ body > main {
 }
 
 .story-page h1 {
-  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
-  margin-bottom: 0.85rem;
+  font-size: clamp(1.85rem, 4.2vw, 2.65rem);
+  margin-bottom: 1.05rem;
+  line-height: 1.02;
 }
 
 .story-page .route {
-  margin: 0 auto 1.15rem;
+  margin: 0 auto 1.65rem;
   max-width: 22rem;
 }
 
 .story-copy {
-  max-width: 26rem;
+  max-width: none;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: none;
 }
 
-.story-copy p { max-width: none; }
-.story-copy p + p { margin-top: 0.7rem; }
+.story-copy p {
+  max-width: none;
+  font-size: clamp(1.02rem, 1.5vw, 1.12rem);
+  line-height: 1.55;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.story-copy p + p { margin-top: 1.15rem; }
+
+.story-copy a { font-weight: 800; }
 
 .route {
   list-style: none;
@@ -1661,24 +1676,6 @@ textarea.ink-field {
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
-
-  .story-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.75rem 2.25rem;
-    align-items: center;
-  }
-
-  .story-lead {
-    max-width: 28rem;
-    margin: 0 auto;
-    padding: 0 0.75rem;
-  }
-
-  .story-copy {
-    max-width: 26rem;
-    margin: 0 auto;
   }
 
   .crew {
